@@ -37,7 +37,7 @@ html, body {
 
 .el {
   position: absolute;
-  white-space: pre-wrap;
+  white-space: normal;
   pointer-events: none;
 }
 
