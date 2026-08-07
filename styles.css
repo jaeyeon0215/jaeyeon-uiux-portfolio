@@ -205,22 +205,22 @@ html, body {
 }
 .cursor-tip {
   position: absolute;
-  left: 100%;
-  top: 38%;
-  margin-left: 14px;
+  left: 50%;
+  top: 100%;
+  margin-top: 6px;
+  transform: translateX(-50%) translateY(-6px);
   white-space: nowrap;
   color: #f6ce54;
   font-family: 'Baloo 2', sans-serif;
   font-weight: 600;
   font-size: 20px;
   opacity: 0;
-  transform: translateX(-6px);
   transition: opacity 0.2s ease, transform 0.2s ease;
   pointer-events: none;
 }
 .cursor-wrap:hover .cursor-tip {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 /* --- back-to-home button (project end pages) --- */
