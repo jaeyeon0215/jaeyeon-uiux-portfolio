@@ -208,7 +208,7 @@ html, body {
   left: 50%;
   top: 100%;
   margin-top: 6px;
-  transform: translateX(-50%) translateY(-6px);
+  transform: translateX(calc(-50% - 55px)) translateY(-6px);
   white-space: nowrap;
   color: #f6ce54;
   font-family: 'Baloo 2', sans-serif;
@@ -220,7 +220,7 @@ html, body {
 }
 .cursor-wrap:hover .cursor-tip {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(calc(-50% - 55px)) translateY(0);
 }
 
 /* --- back-to-home button (project end pages) --- */
