@@ -210,7 +210,7 @@ html, body {
   margin-top: 6px;
   transform: translateX(calc(-50% - 55px)) translateY(-6px);
   white-space: nowrap;
-  color: #f6ce54;
+  color: #000;
   font-family: 'Baloo 2', sans-serif;
   font-weight: 600;
   font-size: 20px;
