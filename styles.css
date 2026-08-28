@@ -90,6 +90,15 @@ body::after {
   border-radius: 40px;
 }
 
+.card--glass {
+  background: linear-gradient(160deg, rgba(220,237,213,0.55), rgba(255,255,255,0.4));
+  border: 1px solid rgba(150,190,140,0.28);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+  pointer-events: none;
+}
+
 .line {
   position: absolute;
   background: currentColor;
