@@ -367,30 +367,30 @@ body::after {
 }
 .project-card-media--recloset {
   background:
-    radial-gradient(120% 140% at 12% 18%, rgba(255,214,102,0.95), transparent 60%),
-    radial-gradient(120% 140% at 88% 25%, rgba(255,158,140,0.8), transparent 60%),
-    radial-gradient(140% 160% at 50% 105%, rgba(255,240,200,0.65), transparent 65%),
+    radial-gradient(120% 140% at 12% 18%, rgba(221,198,136,0.95), transparent 60%),
+    radial-gradient(120% 140% at 88% 25%, rgba(229,176,166,0.8), transparent 60%),
+    radial-gradient(140% 160% at 50% 105%, rgba(243,234,212,0.65), transparent 65%),
     #f8f4ec;
 }
 .project-card-media--campulse {
   background:
-    radial-gradient(120% 140% at 15% 15%, rgba(94,225,225,0.9), transparent 60%),
-    radial-gradient(120% 140% at 88% 30%, rgba(130,170,255,0.75), transparent 60%),
-    radial-gradient(140% 160% at 50% 105%, rgba(190,255,235,0.6), transparent 65%),
+    radial-gradient(120% 140% at 15% 15%, rgba(123,196,196,0.9), transparent 60%),
+    radial-gradient(120% 140% at 88% 30%, rgba(158,180,227,0.75), transparent 60%),
+    radial-gradient(140% 160% at 50% 105%, rgba(205,240,229,0.6), transparent 65%),
     #eef6f7;
 }
 .project-card-media--spilltea {
   background:
-    radial-gradient(120% 140% at 12% 20%, rgba(150,210,130,0.85), transparent 60%),
-    radial-gradient(120% 140% at 88% 25%, rgba(255,190,205,0.75), transparent 60%),
-    radial-gradient(140% 160% at 50% 105%, rgba(255,240,180,0.6), transparent 65%),
+    radial-gradient(120% 140% at 12% 20%, rgba(159,192,148,0.85), transparent 60%),
+    radial-gradient(120% 140% at 88% 25%, rgba(240,205,213,0.75), transparent 60%),
+    radial-gradient(140% 160% at 50% 105%, rgba(238,230,197,0.6), transparent 65%),
     #f1f8ee;
 }
 .project-card-media--philosophy {
   background:
-    radial-gradient(120% 140% at 18% 18%, rgba(190,150,255,0.85), transparent 60%),
-    radial-gradient(120% 140% at 88% 30%, rgba(255,150,210,0.7), transparent 60%),
-    radial-gradient(140% 160% at 50% 105%, rgba(160,200,255,0.55), transparent 65%),
+    radial-gradient(120% 140% at 18% 18%, rgba(196,174,231,0.85), transparent 60%),
+    radial-gradient(120% 140% at 88% 30%, rgba(231,174,207,0.7), transparent 60%),
+    radial-gradient(140% 160% at 50% 105%, rgba(181,203,234,0.55), transparent 65%),
     #f5f1fb;
 }
 
