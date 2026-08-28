@@ -11,6 +11,14 @@ window.addEventListener('resize', rescale);
 window.addEventListener('load', rescale);
 document.addEventListener('DOMContentLoaded', rescale);
 
+// visible slides only (a slide inside a hidden .project-detail group has no layout)
+function getVisibleSlides() {
+  return Array.prototype.filter.call(document.querySelectorAll('.slide'), function (slide) {
+    var group = slide.closest('.project-detail');
+    return !group || !group.hidden;
+  });
+}
+
 // progress bar + active nav dot
 function onScroll() {
   var doc = document.documentElement;
@@ -20,7 +28,7 @@ function onScroll() {
   var fill = document.getElementById('topbar-fill');
   if (fill) fill.style.width = pct + '%';
 
-  var slides = document.querySelectorAll('.slide');
+  var slides = getVisibleSlides();
   var dots = document.querySelectorAll('#navdots a');
   var mid = scrollTop + window.innerHeight / 2;
   slides.forEach(function (slide, i) {
@@ -35,6 +43,59 @@ window.addEventListener('scroll', onScroll);
 window.addEventListener('load', onScroll);
 
 setTimeout(rescale, 300); // after webfonts settle
+
+// --- landing page vs. project detail routing ---
+// The card grid on slide 1 links straight to a project's slides (e.g. #slide-3),
+// but those slides live inside a hidden .project-detail wrapper by default so
+// they never show up while scrolling the main page — only on click.
+var SLIDE_TO_GROUP = {};
+var GROUP_SLIDES = {
+  'detail-recloset': ['slide-3', 'slide-4', 'slide-5', 'slide-6', 'slide-7', 'slide-8', 'slide-9'],
+  'detail-campulse': ['slide-10', 'slide-11', 'slide-12', 'slide-13', 'slide-14', 'slide-15', 'slide-16'],
+  'detail-spilltea': ['slide-17', 'slide-18', 'slide-19', 'slide-20', 'slide-21', 'slide-22', 'slide-23'],
+  'detail-philosophy': ['slide-24']
+};
+Object.keys(GROUP_SLIDES).forEach(function (groupId) {
+  GROUP_SLIDES[groupId].forEach(function (slideId) { SLIDE_TO_GROUP[slideId] = groupId; });
+});
+var MAIN_SLIDE_IDS = ['slide-1', 'slide-2', 'slide-25'];
+
+function buildNavDots(slideIds) {
+  var nav = document.getElementById('navdots');
+  if (!nav) return;
+  nav.innerHTML = slideIds.map(function (id) { return '<a href="#' + id + '"></a>'; }).join('');
+}
+
+function showMainPage() {
+  document.querySelectorAll('.project-detail').forEach(function (group) { group.hidden = true; });
+  buildNavDots(MAIN_SLIDE_IDS);
+}
+
+function showProjectDetail(groupId) {
+  document.querySelectorAll('.project-detail').forEach(function (group) {
+    group.hidden = (group.id !== groupId);
+  });
+  buildNavDots(MAIN_SLIDE_IDS.slice(0, 2).concat(GROUP_SLIDES[groupId], MAIN_SLIDE_IDS.slice(2)));
+}
+
+function handleHashNav() {
+  var targetId = location.hash.replace('#', '');
+  var groupId = SLIDE_TO_GROUP[targetId];
+  if (groupId) {
+    showProjectDetail(groupId);
+  } else {
+    showMainPage();
+  }
+  rescale();
+  requestAnimationFrame(function () {
+    var target = targetId && document.getElementById(targetId);
+    if (target) target.scrollIntoView();
+    onScroll();
+  });
+}
+
+window.addEventListener('hashchange', handleHashNav);
+document.addEventListener('DOMContentLoaded', handleHashNav);
 
 // dropdown nav (click-to-toggle, works alongside CSS :hover on desktop)
 document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
