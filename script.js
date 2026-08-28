@@ -36,15 +36,6 @@ window.addEventListener('load', onScroll);
 
 setTimeout(rescale, 300); // after webfonts settle
 
-// project card accordion (click heading to reveal description)
-document.querySelectorAll('.project-card-toggle').forEach(function (toggle) {
-  toggle.addEventListener('click', function () {
-    var card = toggle.closest('.project-card');
-    var isOpen = card.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', isOpen);
-  });
-});
-
 // dropdown nav (click-to-toggle, works alongside CSS :hover on desktop)
 document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
   toggle.addEventListener('click', function (e) {

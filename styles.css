@@ -287,6 +287,7 @@ html, body {
   border: 1px solid rgba(255,255,255,0.07);
   border-radius: 28px;
   overflow: hidden;
+  text-decoration: none;
   color: inherit;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -322,21 +323,9 @@ html, body {
   color: rgba(255,255,255,0.18);
 }
 
-.project-card-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-  padding: 22px 26px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  color: inherit;
+.project-card-body {
+  padding: 22px 26px 28px;
 }
-.project-card-heading { display: block; }
 .project-card-label {
   display: block;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -352,64 +341,6 @@ html, body {
   font-size: clamp(20px, 2.2vw, 28px);
   font-weight: 700;
   color: #fff;
-}
-.project-card-chevron {
-  position: relative;
-  flex: 0 0 auto;
-  width: 22px;
-  height: 22px;
-}
-.project-card-chevron::before,
-.project-card-chevron::after {
-  content: '';
-  position: absolute;
-  background: rgba(255,255,255,0.6);
-  border-radius: 2px;
-  transition: transform 0.25s ease;
-}
-.project-card-chevron::before {
-  left: 0; top: 50%;
-  width: 100%; height: 2px;
-  transform: translateY(-50%);
-}
-.project-card-chevron::after {
-  top: 0; left: 50%;
-  width: 2px; height: 100%;
-  transform: translateX(-50%);
-}
-.project-card.is-open .project-card-chevron::after {
-  transform: translateX(-50%) scaleY(0);
-}
-
-.project-card-details {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  padding: 0 26px;
-  transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease;
-}
-.project-card.is-open .project-card-details {
-  max-height: 220px;
-  opacity: 1;
-  padding: 0 26px 26px;
-}
-.project-card-desc {
-  margin: 0 0 14px;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(255,255,255,0.62);
-}
-.project-card-link {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.4);
-  padding-bottom: 2px;
-}
-.project-card-link:hover {
-  border-color: #fff;
 }
 
 /* --- Slide 25: closing --- */
