@@ -58,7 +58,7 @@ var GROUP_SLIDES = {
 Object.keys(GROUP_SLIDES).forEach(function (groupId) {
   GROUP_SLIDES[groupId].forEach(function (slideId) { SLIDE_TO_GROUP[slideId] = groupId; });
 });
-var MAIN_SLIDE_IDS = ['slide-1', 'slide-2', 'slide-25'];
+var MAIN_SLIDE_IDS = ['slide-1', 'slide-2', 'project-cards', 'slide-25'];
 
 function buildNavDots(slideIds) {
   var nav = document.getElementById('navdots');
@@ -75,7 +75,7 @@ function showProjectDetail(groupId) {
   document.querySelectorAll('.project-detail').forEach(function (group) {
     group.hidden = (group.id !== groupId);
   });
-  buildNavDots(MAIN_SLIDE_IDS.slice(0, 2).concat(GROUP_SLIDES[groupId], MAIN_SLIDE_IDS.slice(2)));
+  buildNavDots(MAIN_SLIDE_IDS.slice(0, 3).concat(GROUP_SLIDES[groupId], MAIN_SLIDE_IDS.slice(3)));
 }
 
 function handleHashNav() {

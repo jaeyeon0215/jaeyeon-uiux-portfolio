@@ -272,6 +272,10 @@ html, body {
   color: rgba(255,255,255,0.68);
 }
 
+.cards-slide {
+  padding-top: 64px;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -425,6 +429,7 @@ html, body {
   #topnav { gap: 22px; }
   #topnav > a, #topnav .dropdown-toggle { font-size: 11px; }
   .hero-slide { padding: 84px 20px 64px; }
+  .cards-slide { padding-top: 40px; }
   .project-grid { grid-template-columns: 1fr; max-width: 480px; }
   .closing-top { flex-direction: column; align-items: flex-start; }
   .closing-actions { align-items: flex-start; width: 100%; }
