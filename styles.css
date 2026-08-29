@@ -378,7 +378,7 @@ body::after {
 }
 .project-card-media--recloset {
   background:
-    radial-gradient(120% 140% at 12% 18%, rgba(221,198,136,0.95), transparent 60%),
+    radial-gradient(120% 140% at 12% 18%, rgba(238,224,186,0.95), transparent 60%),
     radial-gradient(120% 140% at 88% 25%, rgba(229,176,166,0.8), transparent 60%),
     radial-gradient(140% 160% at 50% 105%, rgba(243,234,212,0.65), transparent 65%),
     #f8f4ec;
@@ -436,18 +436,18 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   margin-top: 20px;
-  border-radius: 50%;
-  background: rgba(19,19,19,0.92);
-  border: 1px solid rgba(0,0,0,0.08);
-  color: #fff;
-  font-size: 16px;
-  transition: background 0.2s ease, transform 0.2s ease;
+  color: #131313;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.project-card-arrow svg {
+  width: 100%;
+  height: 100%;
 }
 .project-card:hover .project-card-arrow {
-  background: #000;
+  color: #000;
   transform: translateX(4px);
 }
 
