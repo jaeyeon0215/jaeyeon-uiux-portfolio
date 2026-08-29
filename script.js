@@ -11,9 +11,11 @@ window.addEventListener('resize', rescale);
 window.addEventListener('load', rescale);
 document.addEventListener('DOMContentLoaded', rescale);
 
-// visible slides only (a slide inside a hidden .project-detail group has no layout)
+// visible slides only (a slide inside a hidden .project-detail group, or a
+// hidden main-page slide, has no layout)
 function getVisibleSlides() {
   return Array.prototype.filter.call(document.querySelectorAll('.slide'), function (slide) {
+    if (slide.hidden) return false;
     var group = slide.closest('.project-detail');
     return !group || !group.hidden;
   });
@@ -59,6 +61,9 @@ Object.keys(GROUP_SLIDES).forEach(function (groupId) {
   GROUP_SLIDES[groupId].forEach(function (slideId) { SLIDE_TO_GROUP[slideId] = groupId; });
 });
 var MAIN_SLIDE_IDS = ['slide-1', 'slide-2', 'project-cards', 'slide-25'];
+// slide-1/slide-2/project-cards are the landing page proper; slide-25 (contact)
+// stays visible as a closing section under every project too.
+var MAIN_PAGE_ONLY_IDS = ['slide-1', 'slide-2', 'project-cards'];
 
 function buildNavDots(slideIds) {
   var nav = document.getElementById('navdots');
@@ -68,6 +73,10 @@ function buildNavDots(slideIds) {
 
 function showMainPage() {
   document.querySelectorAll('.project-detail').forEach(function (group) { group.hidden = true; });
+  MAIN_PAGE_ONLY_IDS.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.hidden = false;
+  });
   buildNavDots(MAIN_SLIDE_IDS);
 }
 
@@ -75,7 +84,11 @@ function showProjectDetail(groupId) {
   document.querySelectorAll('.project-detail').forEach(function (group) {
     group.hidden = (group.id !== groupId);
   });
-  buildNavDots(MAIN_SLIDE_IDS.slice(0, 3).concat(GROUP_SLIDES[groupId], MAIN_SLIDE_IDS.slice(3)));
+  MAIN_PAGE_ONLY_IDS.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.hidden = true;
+  });
+  buildNavDots(GROUP_SLIDES[groupId].concat(MAIN_SLIDE_IDS.slice(3)));
 }
 
 function handleHashNav() {
