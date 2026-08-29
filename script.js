@@ -60,10 +60,10 @@ var GROUP_SLIDES = {
 Object.keys(GROUP_SLIDES).forEach(function (groupId) {
   GROUP_SLIDES[groupId].forEach(function (slideId) { SLIDE_TO_GROUP[slideId] = groupId; });
 });
-var MAIN_SLIDE_IDS = ['slide-1', 'slide-2', 'project-cards', 'slide-25'];
-// slide-1/slide-2/project-cards are the landing page proper; slide-25 (contact)
-// stays visible as a closing section under every project too.
-var MAIN_PAGE_ONLY_IDS = ['slide-1', 'slide-2', 'project-cards'];
+var MAIN_SLIDE_IDS = ['slide-1', 'slide-2', 'project-cards', 'slide-philosophy', 'slide-25'];
+// slide-1/slide-2/project-cards/slide-philosophy are the landing page proper;
+// slide-25 (contact) stays visible as a closing section under every project too.
+var MAIN_PAGE_ONLY_IDS = ['slide-1', 'slide-2', 'project-cards', 'slide-philosophy'];
 
 function buildNavDots(slideIds) {
   var nav = document.getElementById('navdots');
@@ -88,7 +88,7 @@ function showProjectDetail(groupId) {
     var el = document.getElementById(id);
     if (el) el.hidden = true;
   });
-  buildNavDots(GROUP_SLIDES[groupId].concat(MAIN_SLIDE_IDS.slice(3)));
+  buildNavDots(GROUP_SLIDES[groupId].concat(['slide-25']));
 }
 
 function handleHashNav() {

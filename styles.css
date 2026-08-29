@@ -406,6 +406,9 @@ body::after {
 }
 
 .project-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 22px 26px 26px;
   background: #fff;
 }
@@ -431,6 +434,7 @@ body::after {
   line-height: 1.5;
   color: rgba(0,0,0,0.55);
   max-width: 34ch;
+  min-height: 63px;
 }
 .project-card-arrow {
   display: flex;
@@ -438,7 +442,8 @@ body::after {
   justify-content: center;
   width: 30px;
   height: 30px;
-  margin-top: 20px;
+  margin-top: auto;
+  padding-top: 20px;
   color: #131313;
   transition: color 0.2s ease, transform 0.2s ease;
 }
