@@ -53,7 +53,7 @@ var GROUP_SLIDES = {
   'detail-recloset': ['slide-3', 'slide-4', 'slide-5', 'slide-6', 'slide-7', 'slide-8', 'slide-9'],
   'detail-campulse': ['slide-10', 'slide-11', 'slide-12', 'slide-13', 'slide-14', 'slide-15', 'slide-16'],
   'detail-spilltea': ['slide-17', 'slide-18', 'slide-19', 'slide-20', 'slide-21', 'slide-22', 'slide-23'],
-  'detail-philosophy': ['slide-24']
+  'detail-spotify': ['spotify-1', 'spotify-2', 'spotify-3', 'spotify-4', 'spotify-5']
 };
 Object.keys(GROUP_SLIDES).forEach(function (groupId) {
   GROUP_SLIDES[groupId].forEach(function (slideId) { SLIDE_TO_GROUP[slideId] = groupId; });

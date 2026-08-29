@@ -397,19 +397,12 @@ body::after {
     radial-gradient(140% 160% at 50% 105%, rgba(238,230,197,0.6), transparent 65%),
     #f1f8ee;
 }
-.project-card-media--philosophy {
+.project-card-media--spotify {
   background:
-    radial-gradient(120% 140% at 18% 18%, rgba(196,174,231,0.85), transparent 60%),
-    radial-gradient(120% 140% at 88% 30%, rgba(231,174,207,0.7), transparent 60%),
-    radial-gradient(140% 160% at 50% 105%, rgba(181,203,234,0.55), transparent 65%),
-    #f5f1fb;
-}
-
-.philosophy-mark {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 130px;
-  line-height: 1;
-  color: rgba(0,0,0,0.2);
+    radial-gradient(120% 140% at 15% 18%, rgba(29,185,84,0.5), transparent 60%),
+    radial-gradient(120% 140% at 88% 25%, rgba(163,224,178,0.6), transparent 60%),
+    radial-gradient(140% 160% at 50% 105%, rgba(210,238,205,0.55), transparent 65%),
+    #eef8ee;
 }
 
 .project-card-body {
