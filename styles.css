@@ -436,26 +436,6 @@ body::after {
   max-width: 34ch;
   min-height: 63px;
 }
-.project-card-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  margin-top: auto;
-  padding-top: 20px;
-  color: #131313;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-.project-card-arrow svg {
-  width: 100%;
-  height: 100%;
-}
-.project-card:hover .project-card-arrow {
-  color: #000;
-  transform: translateX(4px);
-}
-
 /* --- Slide 25: closing --- */
 .closing-slide {
   padding: 64px 48px 56px;
@@ -517,6 +497,8 @@ body::after {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .social-icon img { width: 36px; height: 36px; object-fit: contain; }
+.social-icon--linkedin { width: 56px; height: 56px; }
+.social-icon--linkedin img { width: 46px; height: 46px; }
 .social-icon:hover {
   transform: translateY(-3px);
   opacity: 0.75;
